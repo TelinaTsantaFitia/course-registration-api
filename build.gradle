@@ -111,7 +111,7 @@ jacocoTestReport {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:3.2.2'
     testImplementation 'org.testcontainers:testcontainers:2.0.2'
-    testImplementation 'org.testcontainers:postgresql:2.0.2'
+    testImplementation 'org.testcontainers:testcontainers-postgresql:2.0.2'
 
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.3'
 
