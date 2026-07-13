@@ -111,6 +111,7 @@ jacocoTestReport {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:3.2.2'
     testImplementation 'org.testcontainers:testcontainers:2.0.2'
+    testImplementation 'org.testcontainers:postgresql:2.0.2'
 
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.3'
 
@@ -142,10 +143,12 @@ dependencies {
 
     implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
 
+    // v3 (remplace l'ancienne ligne io.swagger:swagger-annotations:1.6.12)
     implementation 'io.swagger.core.v3:swagger-annotations-jakarta:2.2.21'
 
     implementation 'org.springframework.boot:spring-boot-starter-validation:3.2.2'
 
+    // Base de données (JPA + Postgres + Flyway)
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.2.2'
     implementation 'org.postgresql:postgresql:42.7.3'
     implementation 'org.flywaydb:flyway-core:10.10.0'
