@@ -124,6 +124,7 @@ dependencies {
     implementation 'software.amazon.awssdk.crt:aws-crt:0.28.12'
     implementation 'software.amazon.awssdk:ses:2.21.40'
     implementation 'software.amazon.awssdk:core:2.21.40'
+    implementation 'software.amazon.awssdk:s3:2.21.40'
 
     implementation 'jakarta.mail:jakarta.mail-api:2.1.2'
     implementation 'jakarta.activation:jakarta.activation-api:2.1.2'
@@ -140,12 +141,17 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 
     implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
-    implementation 'io.swagger:swagger-annotations:1.6.12'
+
+    implementation 'io.swagger.core.v3:swagger-annotations-jakarta:2.2.21'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation:3.2.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.2.2'
+    implementation 'org.postgresql:postgresql:42.7.3'
+    implementation 'org.flywaydb:flyway-core:10.10.0'
+    implementation 'org.flywaydb:flyway-database-postgresql:10.10.0'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.2'
     testImplementation 'org.testcontainers:testcontainers-junit-jupiter:2.0.2'
     testImplementation 'org.junit-pioneer:junit-pioneer:2.2.0'
-
-
-
 }
