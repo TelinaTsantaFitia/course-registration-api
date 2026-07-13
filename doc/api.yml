@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: Course Registration API - Images
+  version: 1.0.0
+
+paths:
+  /images:
+    post:
+      operationId: submitImage
+      tags: [Images]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file, email]
+              properties:
+                file:
+                  type: string
+                  format: binary
+                email:
+                  type: string
+                  format: email
+      responses:
+        '202':
+          description: Image accepted, processing started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageSubmissionResponse'
+        '400':
+          description: Invalid file format (only JPEG/PNG accepted)
+
+  /images/{id}:
+    get:
+      operationId: getImageStatus
+      tags: [Images]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Current status of the image processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageStatusResponse'
+        '404':
+          description: Image not found
+
+components:
+  schemas:
+    ImageSubmissionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [PENDING, DONE, FAILED]
+
+    ImageStatusResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type: string
+        filename:
+          type: string
+        status:
+          type: string
+          enum: [PENDING, DONE, FAILED]
+        createdAt:
+          type: string
+          format: date-time
