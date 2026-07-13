@@ -1,0 +1,3 @@
+git SPRING_DATASOURCE_USERNAME=neondb_owner
+SPRING_DATASOURCE_PASSWORD=npg_8rgGFDcvb5JS
+SPRING_DATASOURCE_URL=jdbc:postgresql://ep-ancient-mouse-atj7enja-pooler.c-9.us-east-1.aws.neon.tech/neondb?user=neondb_owner&password=npg_8rgGFDcvb5JS&sslmode=require&channelBinding=require
